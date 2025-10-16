@@ -11,9 +11,11 @@
  */
 
 import { initializeCustomTransforms } from './src/transform/custom-transforms.js';
+import { initializeCustomFormats } from './src/transform/custom-formats.js';
 
-// Initialize custom transforms before building
+// Initialize custom transforms and formats before building
 initializeCustomTransforms();
+initializeCustomFormats();
 
 export default {
   // Source token files
@@ -106,6 +108,32 @@ export default {
         {
           destination: 'tokens-flat.json',
           format: 'json/flat'
+        }
+      ]
+    },
+
+    // Documentation (human-readable formats)
+    docs: {
+      transformGroup: 'js',
+      buildPath: 'output/docs/',
+      files: [
+        {
+          destination: 'tokens-documentation.json',
+          format: 'json/documentation'
+        },
+        {
+          destination: 'tokens-documentation.md',
+          format: 'markdown/documentation',
+          options: {
+            title: 'Design Tokens Documentation'
+          }
+        },
+        {
+          destination: 'tokens-documentation.html',
+          format: 'html/documentation',
+          options: {
+            title: 'Design Tokens Documentation'
+          }
         }
       ]
     },
