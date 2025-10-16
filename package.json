@@ -4,6 +4,9 @@
   "description": "Demo of Automated Design Token Pipeline",
   "main": "index.js",
   "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "extract": "node test-extraction.js",
