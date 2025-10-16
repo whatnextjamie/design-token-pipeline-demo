@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Token Pipeline Demo</title>
+  <link rel="stylesheet" href="../../output/css/variables.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1>🎨 Design Token Pipeline Demo</h1>
+      <p class="subtitle">Automated Figma to Code Workflow</p>
+      <button id="run-pipeline" class="btn-primary">▶ Run Pipeline</button>
+      <div id="pipeline-status" class="status hidden"></div>
+    </header>
+
+    <!-- Pipeline Progress -->
+    <section id="progress-section" class="section hidden">
+      <h2>Pipeline Progress</h2>
+      <div class="progress-container">
+        <div class="progress-step" data-step="1">
+          <div class="step-icon">1</div>
+          <div class="step-label">Extract Tokens</div>
+        </div>
+        <div class="progress-step" data-step="2">
+          <div class="step-icon">2</div>
+          <div class="step-label">Normalize Data</div>
+        </div>
+        <div class="progress-step" data-step="3">
+          <div class="step-icon">3</div>
+          <div class="step-label">Transform</div>
+        </div>
+        <div class="progress-step" data-step="4">
+          <div class="step-icon">4</div>
+          <div class="step-label">Generate Files</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Before/After Comparison -->
+    <section class="section">
+      <h2>📥 Input: Figma Tokens</h2>
+      <div class="comparison-grid">
+        <div class="panel">
+          <h3>Source Tokens (JSON)</h3>
+          <pre id="source-tokens" class="code-block"></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Output Files -->
+    <section class="section">
+      <h2>📤 Output: Generated Code</h2>
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="css">CSS</button>
+        <button class="tab-btn" data-tab="js">JavaScript</button>
+        <button class="tab-btn" data-tab="scss">SCSS</button>
+        <button class="tab-btn" data-tab="json">JSON</button>
+      </div>
+      <div class="tab-content">
+        <div id="tab-css" class="tab-panel active">
+          <pre id="output-css" class="code-block"></pre>
+        </div>
+        <div id="tab-js" class="tab-panel">
+          <pre id="output-js" class="code-block"></pre>
+        </div>
+        <div id="tab-scss" class="tab-panel">
+          <pre id="output-scss" class="code-block"></pre>
+        </div>
+        <div id="tab-json" class="tab-panel">
+          <pre id="output-json" class="code-block"></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Token Preview -->
+    <section class="section">
+      <h2>🎨 Live Token Preview</h2>
+
+      <!-- Colors -->
+      <div class="preview-category">
+        <h3>Colors</h3>
+        <div id="color-preview" class="color-grid"></div>
+      </div>
+
+      <!-- Typography -->
+      <div class="preview-category">
+        <h3>Typography</h3>
+        <div id="typography-preview" class="typography-samples"></div>
+      </div>
+
+      <!-- Spacing -->
+      <div class="preview-category">
+        <h3>Spacing Scale</h3>
+        <div id="spacing-preview" class="spacing-samples"></div>
+      </div>
+
+      <!-- Shadows -->
+      <div class="preview-category">
+        <h3>Shadow Effects</h3>
+        <div id="shadow-preview" class="shadow-samples"></div>
+      </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="section stats-section">
+      <h2>📊 Pipeline Statistics</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="stat-tokens">-</div>
+          <div class="stat-label">Tokens Processed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-files">-</div>
+          <div class="stat-label">Files Generated</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-time">-</div>
+          <div class="stat-label">Execution Time</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-platforms">6</div>
+          <div class="stat-label">Target Platforms</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Design Token Pipeline Demo • Built with Style Dictionary</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
