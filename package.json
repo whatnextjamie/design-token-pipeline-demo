@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "extract": "node test-extraction.js",
-    "transform": "node test-transform.js"
+    "transform": "node test-transform.js",
+    "test-transforms": "node test-custom-transforms.js"
   },
   "repository": {
     "type": "git",

@@ -7,7 +7,13 @@
  * - Platforms (CSS, JS, SCSS outputs)
  * - Transform groups (how to convert tokens for each platform)
  * - Output files and formats
+ * - Custom transforms for Figma-specific data
  */
+
+import { initializeCustomTransforms } from './src/transform/custom-transforms.js';
+
+// Initialize custom transforms before building
+initializeCustomTransforms();
 
 export default {
   // Source token files
@@ -29,6 +35,23 @@ export default {
             outputReferences: true,
             // Selector for CSS variables
             selector: ':root'
+          }
+        }
+      ]
+    },
+
+    // CSS with custom transforms (semantic naming + REM units)
+    'css-custom': {
+      transformGroup: 'custom/css',
+      buildPath: 'output/css/',
+      files: [
+        {
+          destination: 'tokens.css',
+          format: 'css/variables',
+          options: {
+            outputReferences: true,
+            selector: ':root',
+            prefix: 'token'
           }
         }
       ]
