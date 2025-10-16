@@ -32,15 +32,15 @@ function setupEventListeners() {
 async function loadData() {
   try {
     // Load extracted tokens
-    const tokensResponse = await fetch('../../output/extracted-tokens.json');
+    const tokensResponse = await fetch('/output/extracted-tokens.json');
     tokensData = await tokensResponse.json();
 
     // Load output files
     const files = {
-      css: '../../output/css/variables.css',
-      js: '../../output/js/tokens.js',
-      scss: '../../output/scss/_variables.scss',
-      json: '../../output/json/tokens.json'
+      css: '/output/css/variables.css',
+      js: '/output/js/tokens.js',
+      scss: '/output/scss/_variables.scss',
+      json: '/output/json/tokens.json'
     };
 
     for (const [key, path] of Object.entries(files)) {
