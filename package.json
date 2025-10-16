@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Demo of Automated Design Token Pipeline",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "extract": "node test-extraction.js"
   },
   "repository": {
     "type": "git",
