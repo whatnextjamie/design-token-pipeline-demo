@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "extract": "node test-extraction.js"
+    "extract": "node test-extraction.js",
+    "transform": "node test-transform.js"
   },
   "repository": {
     "type": "git",

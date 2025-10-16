@@ -1,0 +1,128 @@
+/**
+ * Style Dictionary Configuration
+ * Transforms design tokens into multiple platform-specific formats
+ *
+ * This config defines:
+ * - Source files (where tokens come from)
+ * - Platforms (CSS, JS, SCSS outputs)
+ * - Transform groups (how to convert tokens for each platform)
+ * - Output files and formats
+ */
+
+export default {
+  // Source token files
+  source: ['output/extracted-tokens.json'],
+
+  // Platform-specific configurations
+  platforms: {
+    // CSS Custom Properties (CSS Variables)
+    css: {
+      transformGroup: 'css',
+      buildPath: 'output/css/',
+      files: [
+        {
+          destination: 'variables.css',
+          format: 'css/variables',
+          options: {
+            // Output references to other tokens when possible
+            // e.g., if primary-button uses primary-500, output: var(--color-primary-500)
+            outputReferences: true,
+            // Selector for CSS variables
+            selector: ':root'
+          }
+        }
+      ]
+    },
+
+    // JavaScript/ES6 (for React, Vue, etc.)
+    js: {
+      transformGroup: 'js',
+      buildPath: 'output/js/',
+      files: [
+        {
+          destination: 'tokens.js',
+          format: 'javascript/es6',
+          options: {
+            outputReferences: false
+          }
+        },
+        {
+          destination: 'tokens.module.js',
+          format: 'javascript/module',
+          options: {
+            outputReferences: false
+          }
+        }
+      ]
+    },
+
+    // SCSS Variables (for Sass/SCSS projects)
+    scss: {
+      transformGroup: 'scss',
+      buildPath: 'output/scss/',
+      files: [
+        {
+          destination: '_variables.scss',
+          format: 'scss/variables',
+          options: {
+            outputReferences: true
+          }
+        }
+      ]
+    },
+
+    // JSON (for documentation or other tools)
+    json: {
+      transformGroup: 'js',
+      buildPath: 'output/json/',
+      files: [
+        {
+          destination: 'tokens.json',
+          format: 'json/nested'
+        },
+        {
+          destination: 'tokens-flat.json',
+          format: 'json/flat'
+        }
+      ]
+    },
+
+    // Android (XML) - for mobile apps
+    android: {
+      transformGroup: 'android',
+      buildPath: 'output/android/',
+      files: [
+        {
+          destination: 'colors.xml',
+          format: 'android/colors',
+          filter: {
+            type: 'color'
+          }
+        },
+        {
+          destination: 'dimens.xml',
+          format: 'android/dimens',
+          filter: {
+            type: 'dimension'
+          }
+        }
+      ]
+    },
+
+    // iOS (Swift) - for mobile apps
+    ios: {
+      transformGroup: 'ios',
+      buildPath: 'output/ios/',
+      files: [
+        {
+          destination: 'StyleDictionaryColor.swift',
+          format: 'ios-swift/class.swift',
+          className: 'StyleDictionaryColor',
+          filter: {
+            type: 'color'
+          }
+        }
+      ]
+    }
+  }
+};
