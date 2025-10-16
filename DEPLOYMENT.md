@@ -19,8 +19,8 @@ This guide walks you through deploying the Design Token Pipeline Demo to Railway
 
 1. Click "New Project" from the Railway dashboard
 2. Select "Deploy from GitHub repo"
-3. Choose the repository: `whatnextjamie/design-token-pipeline-demo`
-4. Select the branch: `feature/token-pipeline-implementation` (or `main` after merging)
+3. Choose the repository
+4. Select the branch
 
 ### 3. Railway Auto-Configuration
 
@@ -34,11 +34,24 @@ Railway will automatically detect:
 
 1. Railway will automatically start deploying
 2. Wait for the build to complete (usually 1-2 minutes)
-3. Once deployed, Railway will provide a public URL (e.g., `https://design-token-pipeline-demo-production.up.railway.app`)
+3. Check the "Deployments" tab to confirm the build succeeded
 
-### 5. Test the Deployment
+### 5. Generate Public URL
 
-1. Visit the Railway-provided URL
+After a successful deployment, you need to generate a public domain:
+
+1. Click on your service in the Railway dashboard
+2. Go to the **"Settings"** tab
+3. Scroll down to the **"Networking"** section
+4. Click **"Generate Domain"** button
+5. Railway will create a public URL like: `your-app-name.up.railway.app`
+6. Copy this URL - this is your public demo link!
+
+**Alternative**: Some Railway projects show a domain icon or "View" button at the top of the service card.
+
+### 6. Test the Deployment
+
+1. Visit your Railway-provided URL (e.g., `https://your-app.up.railway.app`)
 2. You should see the demo interface
 3. Click "Run Pipeline" to execute the token pipeline
 4. Verify that tokens are generated and displayed
@@ -71,11 +84,28 @@ Railway provides:
 
 ## Troubleshooting
 
+### Can't Find Public URL
+
+If you don't see a public URL after deployment:
+
+1. **Generate a domain first**: Settings → Networking → "Generate Domain"
+2. Railway doesn't automatically create public URLs - you must generate one manually
+3. Look for the domain/globe icon at the top of your service card
+4. Check the "Settings" tab under "Networking" or "Domains" section
+
 ### Build Fails
 
 - Check the build logs in Railway dashboard
 - Ensure all dependencies are in `package.json`
 - Verify `railway.toml` is correctly formatted
+- Ensure Node.js version is 20+ (specified in `package.json` engines field)
+
+### Node.js Version Error
+
+If you see `SyntaxError: Invalid regular expression flags`:
+- This means Railway is using Node.js 18 instead of 20+
+- Verify `package.json` has: `"engines": { "node": ">=20.0.0" }`
+- Redeploy after adding the engines field
 
 ### Server Won't Start
 
@@ -113,7 +143,7 @@ Railway automatically redeploys when you push to the connected branch:
 ```bash
 git add .
 git commit -m "Your changes"
-git push origin feature/token-pipeline-implementation
+git push origin main
 ```
 
 Railway will detect the push and redeploy automatically.
