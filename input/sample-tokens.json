@@ -1,0 +1,311 @@
+{
+  "colors": {
+    "primary": {
+      "50": {
+        "value": "#EEF2FF",
+        "type": "color",
+        "description": "Primary color - lightest shade"
+      },
+      "100": {
+        "value": "#E0E7FF",
+        "type": "color",
+        "description": "Primary color - very light"
+      },
+      "200": {
+        "value": "#C7D2FE",
+        "type": "color",
+        "description": "Primary color - light"
+      },
+      "300": {
+        "value": "#A5B4FC",
+        "type": "color",
+        "description": "Primary color - medium light"
+      },
+      "400": {
+        "value": "#818CF8",
+        "type": "color",
+        "description": "Primary color - medium"
+      },
+      "500": {
+        "value": "#6366F1",
+        "type": "color",
+        "description": "Primary color - base"
+      },
+      "600": {
+        "value": "#4F46E5",
+        "type": "color",
+        "description": "Primary color - medium dark"
+      },
+      "700": {
+        "value": "#4338CA",
+        "type": "color",
+        "description": "Primary color - dark"
+      },
+      "800": {
+        "value": "#3730A3",
+        "type": "color",
+        "description": "Primary color - very dark"
+      },
+      "900": {
+        "value": "#312E81",
+        "type": "color",
+        "description": "Primary color - darkest"
+      }
+    },
+    "neutral": {
+      "white": {
+        "value": "#FFFFFF",
+        "type": "color",
+        "description": "Pure white"
+      },
+      "50": {
+        "value": "#F9FAFB",
+        "type": "color",
+        "description": "Neutral - lightest gray"
+      },
+      "100": {
+        "value": "#F3F4F6",
+        "type": "color",
+        "description": "Neutral - very light gray"
+      },
+      "200": {
+        "value": "#E5E7EB",
+        "type": "color",
+        "description": "Neutral - light gray"
+      },
+      "300": {
+        "value": "#D1D5DB",
+        "type": "color",
+        "description": "Neutral - medium light gray"
+      },
+      "500": {
+        "value": "#6B7280",
+        "type": "color",
+        "description": "Neutral - medium gray"
+      },
+      "700": {
+        "value": "#374151",
+        "type": "color",
+        "description": "Neutral - dark gray"
+      },
+      "900": {
+        "value": "#111827",
+        "type": "color",
+        "description": "Neutral - darkest gray"
+      },
+      "black": {
+        "value": "#000000",
+        "type": "color",
+        "description": "Pure black"
+      }
+    },
+    "semantic": {
+      "success": {
+        "value": "#10B981",
+        "type": "color",
+        "description": "Success state color"
+      },
+      "warning": {
+        "value": "#F59E0B",
+        "type": "color",
+        "description": "Warning state color"
+      },
+      "error": {
+        "value": "#EF4444",
+        "type": "color",
+        "description": "Error state color"
+      },
+      "info": {
+        "value": "#3B82F6",
+        "type": "color",
+        "description": "Info state color"
+      }
+    }
+  },
+  "spacing": {
+    "xs": {
+      "value": "4px",
+      "type": "dimension",
+      "description": "Extra small spacing"
+    },
+    "sm": {
+      "value": "8px",
+      "type": "dimension",
+      "description": "Small spacing"
+    },
+    "md": {
+      "value": "16px",
+      "type": "dimension",
+      "description": "Medium spacing"
+    },
+    "lg": {
+      "value": "24px",
+      "type": "dimension",
+      "description": "Large spacing"
+    },
+    "xl": {
+      "value": "32px",
+      "type": "dimension",
+      "description": "Extra large spacing"
+    },
+    "2xl": {
+      "value": "48px",
+      "type": "dimension",
+      "description": "2x extra large spacing"
+    },
+    "3xl": {
+      "value": "64px",
+      "type": "dimension",
+      "description": "3x extra large spacing"
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "base": {
+        "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+        "type": "fontFamily",
+        "description": "Default font family"
+      },
+      "heading": {
+        "value": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "type": "fontFamily",
+        "description": "Heading font family"
+      },
+      "mono": {
+        "value": "'Monaco', 'Courier New', monospace",
+        "type": "fontFamily",
+        "description": "Monospace font family"
+      }
+    },
+    "fontSize": {
+      "xs": {
+        "value": "12px",
+        "type": "dimension",
+        "description": "Extra small font size"
+      },
+      "sm": {
+        "value": "14px",
+        "type": "dimension",
+        "description": "Small font size"
+      },
+      "base": {
+        "value": "16px",
+        "type": "dimension",
+        "description": "Base font size"
+      },
+      "lg": {
+        "value": "18px",
+        "type": "dimension",
+        "description": "Large font size"
+      },
+      "xl": {
+        "value": "20px",
+        "type": "dimension",
+        "description": "Extra large font size"
+      },
+      "2xl": {
+        "value": "24px",
+        "type": "dimension",
+        "description": "2x extra large font size"
+      },
+      "3xl": {
+        "value": "30px",
+        "type": "dimension",
+        "description": "3x extra large font size"
+      },
+      "4xl": {
+        "value": "36px",
+        "type": "dimension",
+        "description": "4x extra large font size"
+      }
+    },
+    "fontWeight": {
+      "regular": {
+        "value": "400",
+        "type": "fontWeight",
+        "description": "Regular font weight"
+      },
+      "medium": {
+        "value": "500",
+        "type": "fontWeight",
+        "description": "Medium font weight"
+      },
+      "semibold": {
+        "value": "600",
+        "type": "fontWeight",
+        "description": "Semibold font weight"
+      },
+      "bold": {
+        "value": "700",
+        "type": "fontWeight",
+        "description": "Bold font weight"
+      }
+    },
+    "lineHeight": {
+      "tight": {
+        "value": "1.25",
+        "type": "number",
+        "description": "Tight line height"
+      },
+      "normal": {
+        "value": "1.5",
+        "type": "number",
+        "description": "Normal line height"
+      },
+      "relaxed": {
+        "value": "1.75",
+        "type": "number",
+        "description": "Relaxed line height"
+      }
+    }
+  },
+  "shadows": {
+    "sm": {
+      "value": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+      "type": "shadow",
+      "description": "Small shadow"
+    },
+    "md": {
+      "value": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+      "type": "shadow",
+      "description": "Medium shadow"
+    },
+    "lg": {
+      "value": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+      "type": "shadow",
+      "description": "Large shadow"
+    },
+    "xl": {
+      "value": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      "type": "shadow",
+      "description": "Extra large shadow"
+    }
+  },
+  "borderRadius": {
+    "none": {
+      "value": "0px",
+      "type": "dimension",
+      "description": "No border radius"
+    },
+    "sm": {
+      "value": "4px",
+      "type": "dimension",
+      "description": "Small border radius"
+    },
+    "md": {
+      "value": "8px",
+      "type": "dimension",
+      "description": "Medium border radius"
+    },
+    "lg": {
+      "value": "12px",
+      "type": "dimension",
+      "description": "Large border radius"
+    },
+    "full": {
+      "value": "9999px",
+      "type": "dimension",
+      "description": "Full border radius (circular)"
+    }
+  }
+}

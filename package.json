@@ -1,0 +1,26 @@
+{
+  "name": "design-token-pipeline-demo",
+  "version": "1.0.0",
+  "description": "Demo of Automated Design Token Pipeline",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/whatnextjamie/design-token-pipeline-demo.git"
+  },
+  "author": "Jamie Thompson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/whatnextjamie/design-token-pipeline-demo/issues"
+  },
+  "homepage": "https://github.com/whatnextjamie/design-token-pipeline-demo#readme",
+  "devDependencies": {
+    "axios": "^1.12.2",
+    "chalk": "^5.6.2",
+    "dotenv": "^17.2.3",
+    "ora": "^9.0.0",
+    "style-dictionary": "^5.1.1"
+  }
+}
