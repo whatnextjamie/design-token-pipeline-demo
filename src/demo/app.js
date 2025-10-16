@@ -237,7 +237,7 @@ function switchTab(tab) {
   document.getElementById(`tab-${tab}`).classList.add('active');
 }
 
-// Simulate pipeline execution
+// Execute real pipeline via API
 async function runPipeline() {
   const button = document.getElementById('run-pipeline');
   const statusEl = document.getElementById('pipeline-status');
@@ -256,31 +256,36 @@ async function runPipeline() {
   statusEl.textContent = '🔄 Pipeline running...';
 
   try {
-    // Simulate pipeline steps
+    // Animate progress steps
     const steps = [1, 2, 3, 4];
+    const stepAnimation = animateSteps(steps);
 
-    for (const step of steps) {
-      // Activate step
-      const stepEl = document.querySelector(`[data-step="${step}"]`);
-      stepEl.classList.add('active');
+    // Call the real API to run the pipeline
+    const response = await fetch('/api/run-pipeline', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
 
-      // Simulate work
-      await sleep(800);
+    const result = await response.json();
 
-      // Complete step
-      stepEl.classList.remove('active');
-      stepEl.classList.add('complete');
+    // Wait for animation to complete
+    await stepAnimation;
+
+    if (result.success) {
+      // Success
+      await sleep(500);
+      statusEl.classList.remove('running');
+      statusEl.classList.add('success');
+      statusEl.textContent = '✓ Pipeline completed successfully!';
+
+      // Reload data and re-render
+      await loadData();
+      renderAll();
+    } else {
+      throw new Error(result.message || 'Pipeline failed');
     }
-
-    // Success
-    await sleep(500);
-    statusEl.classList.remove('running');
-    statusEl.classList.add('success');
-    statusEl.textContent = '✓ Pipeline completed successfully!';
-
-    // Reload data and re-render
-    await loadData();
-    renderAll();
 
   } catch (error) {
     statusEl.classList.remove('running');
@@ -298,6 +303,22 @@ async function runPipeline() {
         step.classList.remove('active', 'complete');
       });
     }, 3000);
+  }
+}
+
+// Animate progress steps
+async function animateSteps(steps) {
+  for (const step of steps) {
+    // Activate step
+    const stepEl = document.querySelector(`[data-step="${step}"]`);
+    stepEl.classList.add('active');
+
+    // Simulate work
+    await sleep(800);
+
+    // Complete step
+    stepEl.classList.remove('active');
+    stepEl.classList.add('complete');
   }
 }
 
